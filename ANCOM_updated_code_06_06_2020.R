@@ -142,12 +142,12 @@ ancom.W = function(otu_data,var_data,
 
 
 ANCOM.main = function(OTUdat,Vardat,
-                      adjusted,repeated,
+                      adjusted = F,repeated = F,
                       main.var,adj.formula,
-                      repeat.var,longitudinal,
-                      random.formula,
-                      multcorr,sig,
-                      prev.cut){
+                      repeat.var = NULL,longitudinal = F,
+                      random.formula = NULL,
+                      multcorr = 2, sig = 0.05,
+                      prev.cut = 0.90){
   
   p.zeroes=apply(OTUdat[,-1],2,function(x){
     s=length(which(x==0))/length(x)
